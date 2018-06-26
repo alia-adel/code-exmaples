@@ -243,11 +243,12 @@
                         scrollLeft: $(div).scrollLeft() + cardWidth
                     }, {
                         duration: speed,
-                        complete: updateSliderArrowsStatus(div, containerWidth, cardCount,
-                            cardWidth)
+                        complete: function() {
+                            setTimeout(updateSliderArrowsStatus(div, containerWidth, cardCount,
+                            cardWidth), 1005);                            
+                        }
                     });
                 }
-                updateSliderArrowsStatus(div, containerWidth, cardCount, cardWidth);
             });
             $('#slide-left-container').click(function (e) {
                 if (($(div).scrollLeft() + containerWidth) > containerWidth) {
@@ -255,11 +256,12 @@
                         scrollLeft: '-=' + cardWidth
                     }, {
                         duration: speed,
-                        complete: updateSliderArrowsStatus(div, containerWidth, cardCount,
-                            cardWidth)
+                        complete: function() {
+                            setTimeout(updateSliderArrowsStatus(div, containerWidth, cardCount,
+                            cardWidth), 1005);                            
+                        }
                     });
                 }
-                updateSliderArrowsStatus(div, containerWidth, cardCount, cardWidth);
             });
 
 
